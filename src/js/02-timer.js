@@ -9,7 +9,6 @@ const hours_js = document.querySelector('[data-hours]');
 const minutes_js = document.querySelector('[data-minutes]');
 const seconds_js = document.querySelector('[data-seconds]');
 
-const currentDate = Date.now();
 let futureTime;
 start.disabled = true;
 
