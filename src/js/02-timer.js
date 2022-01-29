@@ -1,3 +1,4 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 require('flatpickr/dist/themes/material_green.css');
@@ -18,9 +19,10 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
+    const currentDate = Date.now();
     const millicounts = selectedDates[0].getTime();
-    if (millicounts < 0) {
-      window.alert('Please choose a date in the future');
+    if (millicounts - currentDate < 0) {
+      Notify.warning('Please choose a date in the future');
       return;
     }
     start.disabled = false;
@@ -35,6 +37,9 @@ const timer = {
   start() {
     setInterval(() => {
       const currentTime = Date.now();
+      if (futureTime < currentTime) {
+        return;
+      }
       const deltaTime = futureTime - currentTime;
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
 

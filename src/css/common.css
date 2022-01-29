@@ -18,16 +18,53 @@ img {
   max-width: 100%;
 }
 
-div {
+button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+button:first-child {
+  margin-right: 10px;
+}
+.start-stop {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-button {
-  padding: 10px;
-  cursor: pointer;
+.timer {
+  width: 8%;
 }
-button:first-child {
-  margin-right: 10px;
+.field {
+  display: block;
+
+  font-size: 35px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.field:not(:last-child) {
+  margin-bottom: 10px;
+}
+.value {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  /* border-radius: 5px; */
+
+  font-size: 30px;
+  background-color: rgb(27, 188, 155);
+  color: white;
+}
+.label {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  /* border-radius: 5px; */
+
+  font-size: 20px;
+  background-color: rgb(27, 188, 155);
+  color: black;
 }
