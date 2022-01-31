@@ -51,8 +51,8 @@ const timer = {
   },
 };
 
-function onStartButtonClick(futureDate) {
-  timer.start(futureDate);
+function onStartButtonClick() {
+  timer.start();
 }
 
 function addLeadingZero(value) {
